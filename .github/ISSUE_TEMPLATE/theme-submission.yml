@@ -1,0 +1,81 @@
+name: Theme submission
+description: Propose a theme for the official Glint library (optional; you can always self-publish).
+title: "[Theme] "
+labels: ["type:feature", "area:community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read [CONTRIBUTING.md](https://github.com/Astraive/glint-library/blob/main/CONTRIBUTING.md) first.
+        - **Submission is optional.** You can host a theme in your own Git repository or share a `.glint` file without any approval from this library.
+        - **Current status:** this repository is in its foundation stage; no theme intake, registry, or validation workflow exists yet, so submissions are tracked as proposals.
+        - Never attach secrets, personal media, proprietary fonts or icons, or unredacted local paths.
+  - type: input
+    id: package-id
+    attributes:
+      label: Proposed package ID
+      placeholder: e.g. community.my-theme
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source repository or release URL
+      description: Where the theme source and tagged release live.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Platforms actually tested
+      multiple: true
+      options:
+        - windows
+        - linux
+        - macos
+    validations:
+      required: true
+  - type: textarea
+    id: environments
+    attributes:
+      label: Tested environment tuples
+      description: OS build, session or compositor, WebView runtime, GPU and driver, Glint version. List only what you tested.
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Required and optional capabilities
+    validations:
+      required: true
+  - type: textarea
+    id: licenses
+    attributes:
+      label: Licenses
+      description: Theme code license and a list of every font, icon, image, and sound with its license and attribution.
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary and known limitations
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: The theme contains no install scripts, native binaries, or network-loaded executable code.
+          required: true
+        - label: All assets are bundled and licensed for redistribution; nothing proprietary or trademarked is included without rights.
+          required: true
+        - label: I will not present this theme as made by the Glint maintainers.
+          required: true

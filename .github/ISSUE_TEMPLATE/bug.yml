@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a defect in this repository's scripts, workflows, schemas, or (once published) a theme or registry entry.
+title: "[Bug] "
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        - **Security issues:** do not file publicly; use [private vulnerability reporting](https://github.com/Astraive/glint-library/security/advisories/new) per [SECURITY.md](https://github.com/Astraive/glint-library/blob/main/SECURITY.md).
+        - **Glint app bugs** belong in [Astraive/Glint](https://github.com/Astraive/Glint/issues).
+        - This repository is in its foundation stage: no themes or registry exist yet.
+        - Never attach secrets, proprietary assets, or unredacted local paths.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Target area
+      options:
+        - Repository scripts or CI
+        - Documentation
+        - Registry or schema (once present)
+        - A specific theme (once present)
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: Commit SHA, registry version, or theme ID and version
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS build and tool versions (Python, PowerShell, Glint version if relevant).
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy-confirm
+    attributes:
+      label: Disclosure safety
+      options:
+        - label: This report contains no undisclosed exploit, secrets, proprietary assets, or unredacted private paths.
+          required: true

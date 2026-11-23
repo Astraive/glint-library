@@ -1,0 +1,90 @@
+name: Backlog task
+description: Track a concrete library deliverable (maintainers).
+title: "[PREFIX-NNN] "
+labels: ["type:task", "kind:task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Follow the [issue conventions](https://github.com/Astraive/Glint/blob/main/docs/issue-conventions.md). Use a stable ticket ID with a library prefix (LIB, CAT, LTH, LCOM, LLEG, LQA, LREL). Do not invent GitHub `#N` numbers before publication.
+  - type: input
+    id: ticket
+    attributes:
+      label: Stable ticket ID
+      placeholder: e.g. LIB-001
+    validations:
+      required: true
+  - type: input
+    id: parent-epic
+    attributes:
+      label: Parent epic
+      placeholder: e.g. LIB-EPIC
+    validations:
+      required: true
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Milestone
+      options:
+        - "L0 — Library Foundation"
+        - "L1 — Registry Schema & CI"
+        - "L2 — Official Starter Themes"
+        - "L3 — Public Catalog Launch"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0
+        - P1
+        - P2
+        - P3
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options:
+        - S (up to 1 person-day)
+        - M (>1 to 3 person-days)
+        - L (>3 to 5 person-days)
+        - XL (containers only)
+    validations:
+      required: true
+  - type: input
+    id: area
+    attributes:
+      label: Canonical area label
+      placeholder: e.g. area:catalog
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      value: |
+        1.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Prerequisites and unblocked work using stable ticket IDs.

@@ -1,0 +1,19 @@
+# Code owners for Astraive/glint-library.
+# Single-maintainer bootstrap: only verified repository maintainer @NeerajCodz is listed.
+# Required approvals are 0 during bootstrap (a sole maintainer cannot approve their own PR);
+# enable CODEOWNERS approval enforcement once additional maintainers hold write access.
+
+*                       @NeerajCodz
+
+/.github/               @NeerajCodz
+/.githooks/             @NeerajCodz
+/scripts/               @NeerajCodz
+/CHANGELOG.md           @NeerajCodz
+/CODE_OF_CONDUCT.md     @NeerajCodz
+/CONTRIBUTING.md        @NeerajCodz
+/GOVERNANCE.md          @NeerajCodz
+/LICENSE                @NeerajCodz
+/README.md              @NeerajCodz
+/SECURITY.md            @NeerajCodz
+/SUPPORT.md             @NeerajCodz
+/VERSIONING.md          @NeerajCodz
