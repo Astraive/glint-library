@@ -1,0 +1,23 @@
+# External local backlog data (lives outside the repository; ignored defensively)
+/.issues/
+
+# Build output and dependencies
+target/
+node_modules/
+dist/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local environment and logs
+.env
+.env.*
+*.log
